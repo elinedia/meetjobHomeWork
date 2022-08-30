@@ -85,46 +85,41 @@
 		}
 		#down{
 			float:left;
-			width: 200px;
-			margin: 5px 0 5px 10px;
+			width: 100%;
+			margin: 0px;
 			background-color: #FF6666;
-			color: #fff;
+			
 			border-bottom: 1px solid #fff;
-			display: inline;
+			
 		
 			}
-
-		
-
-		
-		.catalog{
-	
-			color: #fff;
-			border-bottom: 1px solid #fff ; 
-
+		#down table{
+			text-align: center;
+			width: 100%;
 		}
 
-
-
+		
 		
 		.item{
-			background-color:#FFCCCC ;
+			
 			margin:0;
 			padding:5px 5px 10px 5px;
 			list-style-type: none;
 		}
 
 
-		.item li{
+		.item td{
+			background-color:#FFCCCC ;
 			margin:0;
 			padding:1px 0px;
+			text-align: center;
 			  /*顯示模式 block區塊*/
 		}
 		.item a{
 			color:#FF9966;
 			display: block;
 			text-decoration: none;
-			width: 130px;
+			width: 475px;
 			font-size: 20px;
 		}
 		#footer{
@@ -154,13 +149,18 @@
 				
 
 				);
-			$('.item').hide();  //item 不是第一的都隱藏起來
+			$(".item td").hide();
+			$("#head").click(function(){
+				$(".item td").slideToggle();
+				//$(this).next().slideUp('slow');
+			})
+			//$('.item').hide();  //item 不是第一的都隱藏起來
 			//$(".item:first").show();
-			$(".catalog").click(function(){
+			//$(".catalog").click(function(){
 
-				$('.item:visible').slideUp('slow');//點擊後全部收起來
-				$(this).next().slideDown('slow');//點擊的物件要展開
-			});
+				//$('.item:visible').slideUp('slow');//點擊後全部收起來
+				//$(this).next().slideDown('slow');//點擊的物件要展開
+			//});
 
 
 			$("#btn1").click(function(){
@@ -250,37 +250,39 @@
 		</div>
 
 		<div id="down">
-			<div class="catalog" >
-				<h2>北部</h2>
-			</div>
-			<ul class="item">
-				<li><a href="https://ifoodie.tw/restaurant/61882bc17cc7fc0871e0c853-TWATUTIA-Coffee-%26-Co" target="_blank">TWATUTIA Coffee & Co.</a></li>
-				<li><a href="https://ifoodie.tw/restaurant/559d0ec7c03a103ee86c3890-%E4%B8%89%E6%98%8E%E5%A0%82" target="_blank">三明堂</a></li>
-				<li><a href="https://ifoodie.tw/restaurant/55a4faabc03a10241de63d9c-%E7%8F%A0%E5%AF%B6%E7%9B%92%E6%B3%95%E5%BC%8F%E9%BB%9E%E5%BF%83%E5%9D%8A" target="_blank">珠寶盒法式點心坊</a></li>
-				<li><a href="https://ifoodie.tw/restaurant/55a67167c03a104df53ca2de-%E5%BD%8C%E6%95%A6%E9%81%93%E8%8C%B6%E9%A4%90%E5%BB%B3" target="_blank">彌敦道茶餐廳</a></li>
-			</ul>
+			
+			<table class="item">
+				<tr id="head">
+					<th>北部</th>
+					<th>中部</th>
+					<th>南部</th>
+				</tr>
 
+				<tr>
+					<td><a href="https://ifoodie.tw/restaurant/61882bc17cc7fc0871e0c853-TWATUTIA-Coffee-%26-Co" target="_blank">TWATUTIA Coffee & Co.</a></td>
+					<td><a href="https://ifoodie.tw/restaurant/5f6efd758c906d24a3f3e164-%E6%A6%AE%E6%B3%89%E9%A4%85%E5%BA%97" target="_blank">榮泉餅店</a></td>
+					<td><a href="https://ifoodie.tw/restaurant/5b9628d923679c6ea3713bf1-%E7%8E%89%E7%A6%BE%E6%88%90%E4%BD%90%E4%BD%9C" target="_blank">玉禾成佐作</a></td>
+				</tr>
 
-			<div class="catalog">
-				<h2>中部</h2>
-			</div>
-			<ul class="item">
-				<li><a href="https://ifoodie.tw/restaurant/5f6efd758c906d24a3f3e164-%E6%A6%AE%E6%B3%89%E9%A4%85%E5%BA%97" target="_blank">榮泉餅店</a></li>
-				<li><a href="https://ifoodie.tw/restaurant/614414c8a6272811b2be2e51-%E8%89%AF%E5%BF%83%E8%A3%BD%E8%8F%93" target="_blank">良心製菓</a></li>
-				<li><a href="https://ifoodie.tw/restaurant/605ac08dbaf6d32a37819fe8-Fudge-%E6%B3%95%E5%A5%87" target="_blank">Fudge法奇</a></li>
-				<li><a href="https://ifoodie.tw/restaurant/58275a782756dd1998ef6bee-%E5%93%81%E5%BF%83-%E6%B8%AF%E5%BC%8F%E9%A3%B2%E8%8C%B6-%E5%85%AC%E7%9B%8A%E5%BA%97" target="_blank">品心-港式飲茶(公益店)</a></li>
-			</ul>
+				<tr>
+					<td><a href="https://ifoodie.tw/restaurant/559d0ec7c03a103ee86c3890-%E4%B8%89%E6%98%8E%E5%A0%82" target="_blank">三明堂</a></td>
+					<td><a href="https://ifoodie.tw/restaurant/614414c8a6272811b2be2e51-%E8%89%AF%E5%BF%83%E8%A3%BD%E8%8F%93" target="_blank">良心製菓</a></td>
+					<td><a href="https://ifoodie.tw/restaurant/5dc6e40722613942cf7fcecf-%E5%AE%97%E5%AE%B6-%E6%BA%90%E5%90%89%E5%85%86%E5%BA%B5-%E5%92%8C%E8%8F%93%E5%AD%90" target="_blank">宗家-源吉兆庵-和菓子</a></td>
+				</tr>
 
+				<tr>
+					<td><a href="https://ifoodie.tw/restaurant/55a4faabc03a10241de63d9c-%E7%8F%A0%E5%AF%B6%E7%9B%92%E6%B3%95%E5%BC%8F%E9%BB%9E%E5%BF%83%E5%9D%8A" target="_blank">珠寶盒法式點心坊</a></td>
+					<td><a href="https://ifoodie.tw/restaurant/605ac08dbaf6d32a37819fe8-Fudge-%E6%B3%95%E5%A5%87" target="_blank">Fudge法奇</a></td>
+					<td><a href="https://ifoodie.tw/restaurant/5cf8e16c226139711a1ff47c-La-Belle-Maison-Cafe" target="_blank">La Belle Maison Cafe法國傳統手工甜品咖啡餐廳</a></td>
+				</tr>
 
-			<div class="catalog">
-				<h2>南部</h2>
-			</div>
-			<ul class="item">
-				<li><a href="https://ifoodie.tw/restaurant/5b9628d923679c6ea3713bf1-%E7%8E%89%E7%A6%BE%E6%88%90%E4%BD%90%E4%BD%9C" target="_blank">玉禾成佐作</a></li>
-				<li><a href="https://ifoodie.tw/restaurant/5dc6e40722613942cf7fcecf-%E5%AE%97%E5%AE%B6-%E6%BA%90%E5%90%89%E5%85%86%E5%BA%B5-%E5%92%8C%E8%8F%93%E5%AD%90" target="_blank">宗家-源吉兆庵-和菓子</a></li>
-				<li><a href="https://ifoodie.tw/restaurant/5cf8e16c226139711a1ff47c-La-Belle-Maison-Cafe" target="_blank">La Belle Maison Cafe法國傳統手工甜品咖啡餐廳</a></li>
-				<li><a href="https://ifoodie.tw/restaurant/55fb022b2756dd161830b90a-%E9%91%AB%E8%8F%AF%E8%8C%B6%E9%A4%90%E5%BB%B3" target="_blank">鑫華茶餐廳</a></li>
-			</ul>
+				<tr>
+					<td><a href="https://ifoodie.tw/restaurant/55a67167c03a104df53ca2de-%E5%BD%8C%E6%95%A6%E9%81%93%E8%8C%B6%E9%A4%90%E5%BB%B3" target="_blank">彌敦道茶餐廳</a></td>
+					<td><a href="https://ifoodie.tw/restaurant/58275a782756dd1998ef6bee-%E5%93%81%E5%BF%83-%E6%B8%AF%E5%BC%8F%E9%A3%B2%E8%8C%B6-%E5%85%AC%E7%9B%8A%E5%BA%97" target="_blank">品心-港式飲茶(公益店)</a></td>
+					<td><a href="https://ifoodie.tw/restaurant/55fb022b2756dd161830b90a-%E9%91%AB%E8%8F%AF%E8%8C%B6%E9%A4%90%E5%BB%B3" target="_blank">鑫華茶餐廳</a></td>
+				</tr>
+			</table>
+			
 		</div>
 		
 	</div>
