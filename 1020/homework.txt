@@ -1,0 +1,7 @@
+#使用者依員工編號來查詢員工基本資料
+mysql> select employee.name, employee.sex,employee.tel,works.employeeid as '員工編號'
+from employee inner join works on employee.id=works.id;
+
+#使用者輸入員工編號,請印出員工姓名及工作項目工作詳述
+
+mysql> select employee.name, works.items as '工作項目',works.info as '工作內容',works.employeeid as '員工編號' from employee inner join works on employee.id = works.id  where works.employeeid = 'H01';
